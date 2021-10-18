@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+    <div class="task">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Duration</th>
+                <th>Day</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+            <tr>
+                {% for task in tasks %}
+            
+                <td>{{task.task_title}}</td>
+                <td>{{task.task_duration}}</td>
+                <td>{{task.day}}</td>
+                <td>{{task.task_status}}</td>
+                <td><a href="{% url 'edit_task' id=task.id%}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <style>
+        .task{
+            margin-left: 25%;
+            width: 50%;
+        }
+        table,td,th{
+            border: 1px solid salmon;
+        }
+        th{
+            background-color: rgb(187, 86, 86);
+        }
+    th{
+     width: 28%;
+
+    }
+
+
+    </style>
+
+</body>
+
+</html>
